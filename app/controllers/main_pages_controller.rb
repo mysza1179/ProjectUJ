@@ -1,4 +1,5 @@
 class MainPagesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_main_page, only: [:show, :edit, :update, :destroy]
 
   # GET /main_pages
