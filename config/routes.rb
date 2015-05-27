@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'home/index'
+
+  resources :main_pages
+
   devise_for :users
   get 'welcome/index'
 
