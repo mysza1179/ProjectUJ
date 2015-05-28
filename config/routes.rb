@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
-  devise_for :users
-  get 'welcome/index'
-=======
   root 'home#index'
->>>>>>> devise_config
 
   resources :main_pages
 
