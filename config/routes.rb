@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  resources :userprojects
 
   root 'home#index'
 
-  resources :main_pages
+  resources :userprojects do
+    resources :tickets
+  end
 
   devise_for :users, controllers: { registrations: "registrations" }
   # The priority is based upon order of creation: first created -> highest priority.
