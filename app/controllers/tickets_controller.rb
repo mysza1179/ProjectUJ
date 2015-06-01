@@ -1,8 +1,8 @@
 class TicketsController < ApplicationController
   
   def create
-    @userproject = Ticket.find(params[:userproject_id])
-    @ticket = @userproject.ticket.build(ticket_params)
+    @userproject = Userproject.find(params[:userproject_id])
+    @ticket = @userproject.tickets.build(tickets_params)
     @ticket.user = current_user
     @ticket.save
     
@@ -11,8 +11,8 @@ class TicketsController < ApplicationController
   end
   
   def destroy
-    @userproject = Ticket.find(params[:userproject_id])
-    @ticket = @userproject.ticket.find(params[:id]).destroy
+    @userproject = Userproject.find(params[:userproject_id])
+    @ticket = @userproject.tickets.find(params[:id]).destroy
     
     redirect_to userprojects_url
     
@@ -20,7 +20,7 @@ class TicketsController < ApplicationController
     
   private
   
-    def ticket_params
-      params.require(:ticket).permit(:content)
+    def tickets_params
+      params.require(:ticket).permit(:name, :description)
     end
 end

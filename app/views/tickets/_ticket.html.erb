@@ -1,3 +1,4 @@
-<p><%= ticket.content %>
+<p><%= ticket.name %>
+  <br><%= ticket.description %>
   <%= link_to "Delete", userproject_ticket_path(ticket.userproject, ticket), method: :delete %>
 </p>
