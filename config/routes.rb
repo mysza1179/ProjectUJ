@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :userprojects
+
   root 'home#index'
 
   resources :main_pages

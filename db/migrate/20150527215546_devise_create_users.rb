@@ -2,6 +2,9 @@ class DeviseCreateUsers < ActiveRecord::Migration
   def change
     create_table(:users) do |t|
       
+      #Admin?
+      t.boolean :admin
+      
       #Username
       t.string :name
       t.string :lastname
